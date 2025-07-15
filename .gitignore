@@ -56,3 +56,4 @@ dkms.conf
 
 # custom
 cjack
+cjack_tests
