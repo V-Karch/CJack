@@ -5,12 +5,13 @@ typedef enum {
     DIAMONDS,
     SPADES,
     CLUBS
-} Suite;
+} Suit;
 
 typedef struct {
     unsigned int value;
-    Suite suite;
+    Suit suit;
 } Card;
 
-char* suite_to_string(Suite suite);
+char* suit_to_string(Suit suit);
 char* card_to_string(Card card);
+Card* create_deck(void);
