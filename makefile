@@ -3,6 +3,7 @@ cjack:
 
 test:
 	gcc tests/*.c -o cjack_tests
+	./cjack_tests
 
 clean:
-	rm -f cjack testing
+	rm -f cjack cjack_tests
