@@ -1,5 +1,8 @@
 cjack:
 	gcc cjack.c models/card.c models/deck.c models/hand.c game/blackjack.c -o cjack
 
+test:
+	gcc tests/*.c -o testing
+
 clean:
-	rm -f cjack
+	rm -f cjack testing
