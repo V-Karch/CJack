@@ -4,7 +4,7 @@
 
 int main(void) {
     Card* deck = create_deck();
-    for (int i = 0; i < 52; i++) {
+    for (size_t i = 0; i < 52; i++) {
         char* card_string = card_to_string(deck[i]);
 
         if (i == 51) {

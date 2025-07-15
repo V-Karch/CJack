@@ -1,4 +1,5 @@
 #include "card.h"
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -44,12 +45,12 @@ Card* create_deck(void) {
     
     unsigned int deck_index = 0;
 
-    for (int i = 0; i < 4; i++) { // Suit
-        for (int j = 1; j < 14; j++) { // Value
+    for (size_t i = 0; i < 4; i++) { // Suit
+        for (size_t j = 1; j < 14; j++) { // Value
             deck[deck_index] = (Card){j, suits[i]};
             deck_index++;
         }
     }
 
     return deck;
-} // Remember to free this later
+} // Remember to free the deck memory later
