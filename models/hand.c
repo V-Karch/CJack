@@ -61,7 +61,7 @@ void draw_next_card_to_hand(Hand* hand, Card* deck) {
     } else {
         set_card_drawn(deck, index);
         hand->length++;
-        hand = realloc(hand->hand, hand->length * sizeof(Card));
+        hand->hand = realloc(hand->hand, hand->length * sizeof(Card));
         hand->hand[hand->length - 1] = deck[index];
     }
 }
