@@ -1,5 +1,5 @@
-#include "card.h"
-#include "deck.h"
+#include "models/card.h"
+#include "models/deck.h"
 #include <stdio.h>
 #include <stdlib.h>
 
