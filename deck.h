@@ -1,3 +1,5 @@
+#pragma once
+
 #include "card.h"
 
 Card* create_deck(void);
