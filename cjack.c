@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "models/card.h"
-#include "models/deck.h"
 #include "models/hand.h"
 
 int main(void) {
