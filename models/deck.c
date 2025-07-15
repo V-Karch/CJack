@@ -10,7 +10,7 @@ Card* create_deck(void) {
 
     for (size_t i = 0; i < 4; i++) { // Suit
         for (size_t j = 1; j < 14; j++) { // Value
-            deck[deck_index] = (Card){j, suits[i]};
+            deck[deck_index] = (Card){j, false, suits[i]};
             deck_index++;
         }
     }
@@ -40,5 +40,9 @@ void shuffle_deck(Card* deck) {
         Card temp = deck[i]; // Store current index
         deck[i] = deck[j]; // Overwrite value at current index with random j
         deck[j] = temp; // Overwrite random j with current index
-    }
+    } // Move on to the next lowest index
+}
+
+void set_card_drawn(Card* deck, int index) {
+    deck[index].drawn = true; // Marks a card as invalid
 }

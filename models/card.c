@@ -22,19 +22,20 @@ char* card_to_string(Card card) {
     char* result = NULL;
     const char* suit = suit_to_string(card.suit);
     const char* suit_color = suit_to_color(card.suit);
+    const char* card_drawn = card.drawn ? "drawn" : "not drawn";
 
     if (card.value == 1) {         // ACE
-        asprintf(&result, "%sCard{ace, %s}%s", suit_color, suit, COLOR_RESET);
+        asprintf(&result, "%sCard{ace, %s, %s}%s", suit_color, card_drawn, suit, COLOR_RESET);
     } else if (card.value <= 10) { // NUMERIC
-        asprintf(&result, "%sCard{%d, %s}%s", suit_color, card.value, suit, COLOR_RESET);
+        asprintf(&result, "%sCard{%d, %s, %s}%s", suit_color, card.value, card_drawn, suit, COLOR_RESET);
     } else if (card.value == 11) { // JACK
-        asprintf(&result, "%sCard{jack, %s}%s", suit_color, suit, COLOR_RESET);
+        asprintf(&result, "%sCard{jack, %s, %s}%s", suit_color, card_drawn, suit, COLOR_RESET);
     } else if (card.value == 12) { // QUEEN
-        asprintf(&result, "%sCard{queen, %s}%s", suit_color, suit, COLOR_RESET);
+        asprintf(&result, "%sCard{queen, %s, %s}%s", suit_color, card_drawn, suit, COLOR_RESET);
     } else if (card.value == 13) { // KING
-        asprintf(&result, "%sCard{king, %s}%s", suit_color, suit, COLOR_RESET);
+        asprintf(&result, "%sCard{king, %s, %s}%s", suit_color, card_drawn, suit, COLOR_RESET);
     } else {
-        asprintf(&result, "%sCard{unknown, %s}%s", suit_color, suit, COLOR_RESET);
+        asprintf(&result, "%sCard{unknown, %s, %s}%s", suit_color, card_drawn, suit, COLOR_RESET);
     }
 
     return result;

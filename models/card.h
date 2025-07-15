@@ -1,5 +1,8 @@
 #pragma once
 
+#include <stdbool.h>
+#include <stddef.h>
+
 #ifndef COLOR_RESET 
     #define COLOR_RESET "\033[0m"
 #endif
@@ -12,7 +15,8 @@ typedef enum {
 } Suit;
 
 typedef struct {
-    unsigned int value;
+    size_t value;
+    bool drawn;
     Suit suit;
 } Card;
 
