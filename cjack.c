@@ -1,7 +1,7 @@
 #include "models/hand.h"
 
 int main(void) {
-    srand(time(NULL));
+    srand(time(NULL)); // Set random seed each time program is run
 
     Card* deck = create_deck();
     printf("Unshuffled Deck:\n");

@@ -65,3 +65,34 @@ void draw_next_card_to_hand(Hand* hand, Card* deck) {
         hand->hand[hand->length - 1] = deck[index];
     }
 }
+
+size_t calculate_hand_value(Hand *hand) {
+    size_t sum = 0;
+    size_t ace_count = 0;
+
+    for (size_t i = 0; i < hand->length; i++) {
+        size_t card_value = hand->hand[i].value;
+        if (card_value == 1) {
+            ace_count++;
+            sum += 11;
+            continue; 
+            // Skip to next loop if there's an Ace
+        } 
+    
+        if (card_value >= 10) {
+            sum += 10; // All face cards are 10
+        } else {
+            sum += card_value; // Add non-face card value
+        }
+    }
+
+    while (sum > 21 && ace_count > 0) {
+        // If aces are present and sum is a bust
+        // Turn ace from 11 into 1
+        // If still bust, repeat
+        sum -= 10;
+        ace_count--;
+    }
+
+    return sum;
+}

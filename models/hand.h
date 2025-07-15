@@ -13,3 +13,4 @@ Hand* draw_dealer_hand(Card* deck); // Requires free()
 void display_hand(Hand* hand);
 void free_hand(Hand* hand);
 void draw_next_card_to_hand(Hand* hand, Card* deck);
+size_t calculate_hand_value(Hand* hand);
