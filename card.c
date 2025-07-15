@@ -1,5 +1,6 @@
 #include "card.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 char* suit_to_string(Suit suit) {
     switch (suit) {
