@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char* suit_to_string(Suit suit) {
+const char* suit_to_string(Suit suit) {
     switch (suit) {
         case HEARTS:
             return "hearts";
@@ -20,7 +20,7 @@ char* suit_to_string(Suit suit) {
 
 char* card_to_string(Card card) {
     char* result = NULL;
-    char* suit = suit_to_string(card.suit);
+    const char* suit = suit_to_string(card.suit);
 
     if (card.value == 1) {         // ACE
         asprintf(&result, "Card{ace, %s}", suit);
