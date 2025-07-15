@@ -48,3 +48,20 @@ void free_hand(Hand* hand) {
     free(hand->hand);
     free(hand);
 }
+
+void draw_next_card_to_hand(Hand* hand, Card* deck) {
+    int index = find_next_undrawn_card(deck);
+    if (index == -1) {
+        set_all_cards_undrawn(deck);
+        shuffle_deck(deck);
+        // TODO: Maybe redraw hands and find some way to continue
+        // Idk how you would get to this point in the first place
+        // That the entire deck needs to be reshuffled
+        // due to having too many cards listed as drawn
+    } else {
+        set_card_drawn(deck, index);
+        hand->length++;
+        hand = realloc(hand->hand, hand->length * sizeof(Card));
+        hand->hand[hand->length - 1] = deck[index];
+    }
+}

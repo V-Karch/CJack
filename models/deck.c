@@ -55,5 +55,11 @@ int find_next_undrawn_card(Card* deck) {
 }
 
 void set_card_drawn(Card* deck, size_t index) {
-    deck[index].drawn = true; // Marks a card as invalid
+    deck[index].drawn = true; // Marks a card as drawn
+}
+
+void set_all_cards_undrawn(Card* deck) {
+    for (size_t i = 0; i < 52; i++) {
+        deck[i].drawn = false; // Marks a card as not drawn
+    }
 }
