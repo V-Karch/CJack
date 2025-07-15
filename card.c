@@ -51,4 +51,4 @@ Card* create_deck(void) {
     }
 
     return deck;
-}
+} // Remember to free this later
