@@ -41,6 +41,19 @@ void shuffle_deck(Card* deck) {
     } // Move on to the next lowest index
 }
 
-void set_card_drawn(Card* deck, int index) {
+int find_next_undrawn_card(Card* deck) {
+    // If result is negative, no undrawn card
+    // Time to set all cards to undrawn and reshuffle
+
+    for (size_t i = 0; i < 52; i++) {
+        if (deck[i].drawn == false) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+void set_card_drawn(Card* deck, size_t index) {
     deck[index].drawn = true; // Marks a card as invalid
 }
