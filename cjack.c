@@ -1,4 +1,5 @@
 #include "card.h"
+#include "deck.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,6 +8,7 @@ int main(void) {
     printf("Unshuffled Deck:\n");
     display_deck(deck);
 
+    printf("\n");
     shuffle_deck(deck);
     printf("Shuffed Deck:\n");
     display_deck(deck);
