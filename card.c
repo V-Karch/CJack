@@ -36,7 +36,7 @@ char* card_to_string(Card card) {
     }
 
     return result;
-}
+} // Remember to free the returned string here
 
 Card* create_deck(void) {
     Card* deck = malloc(52 * sizeof(Card));
