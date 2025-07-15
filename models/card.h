@@ -23,4 +23,4 @@ typedef struct {
 
 const char* suit_to_string(Suit suit);
 const char* suit_to_color(Suit suit);
-char* card_to_string(Card card);
+char* card_to_string(Card card); // Requires free()

@@ -1,5 +1,5 @@
 cjack:
-	gcc cjack.c models/card.c models/deck.c -o cjack
+	gcc cjack.c models/card.c models/deck.c models/hand.c -o cjack
 
 clean:
-	rm cjack
+	rm -f cjack
