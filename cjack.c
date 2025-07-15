@@ -14,31 +14,18 @@ int main(void) {
     printf("\nShuffed Deck:\n");
     display_deck(deck);
 
-    Card* player_hand = draw_player_hand(deck);
-    Card* dealer_hand = draw_dealer_hand(deck);
+    Hand* player_hand = draw_player_hand(deck);
+    Hand* dealer_hand = draw_dealer_hand(deck);
 
-    printf("\nPlayer's Initial Hand:\n");
-    char* player_first_card = card_to_string(player_hand[0]);
-    char* player_second_card = card_to_string(player_hand[1]);
-    printf("%s, %s.\n", player_first_card, player_second_card);
+    printf("\nInitial Player Hand:\n");
+    display_hand(player_hand);
 
-    printf("\nDealer's Initial Hand:\n");
-    char* dealer_first_card = card_to_string(dealer_hand[0]);
-    char* dealer_second_card = card_to_string(dealer_hand[1]);
-    printf("%s, %s.\n", dealer_first_card, dealer_second_card);
+    printf("\nInitial Dealer Hand:\n");
+    display_hand(dealer_hand);
 
-    printf("\nDeck After Dealing Initial Hands:\n");
-    display_deck(deck);
-
+    free_hand(player_hand);
+    free_hand(dealer_hand);
     free(deck);
-
-    free(player_first_card);
-    free(player_second_card);
-    free(dealer_first_card);
-    free(dealer_second_card);
-
-    free(player_hand);
-    free(dealer_hand);
 
     return 0;
 }

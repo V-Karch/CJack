@@ -1,6 +1,16 @@
 #pragma once
 
 #include "deck.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-Card* draw_player_hand(Card* deck); // Requires free()
-Card* draw_dealer_hand(Card* deck); // Requires free()
+typedef struct {
+    size_t length;
+    Card* hand;
+} Hand;
+
+Hand* draw_player_hand(Card* deck); // Requires free()
+Hand* draw_dealer_hand(Card* deck); // Requires free()
+
+void display_hand(Hand* hand);
+void free_hand(Hand* hand);
