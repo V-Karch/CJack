@@ -8,7 +8,7 @@ typedef enum {
 } Suite;
 
 typedef struct {
-    int value;
+    unsigned int value;
     Suite suite;
 } Card;
 
