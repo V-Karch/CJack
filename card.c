@@ -54,3 +54,28 @@ Card* create_deck(void) {
 
     return deck;
 } // Remember to free the deck memory later
+
+void display_deck(Card* deck) {
+    for (size_t i = 0; i < 52; i++) {
+        char* card_string = card_to_string(deck[i]);
+
+        if (i == 51) {
+            printf("%s.\n", card_string);
+        } else {
+            printf("%s, ", card_string);
+        }
+
+        free(card_string);
+    }
+}
+
+// Fisher-Yates shuffling implementation
+// https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+void shuffle_deck(Card* deck) {
+    for (size_t i = 51; i > 0; i--) {
+        size_t j = rand() % (i + 1); // Random from 0-(i + 1) decreasing
+        Card temp = deck[i]; // Store current index
+        deck[i] = deck[j]; // Overwrite value at current index with random j
+        deck[j] = temp; // Overwrite random j with current index
+    }
+}

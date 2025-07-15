@@ -12,6 +12,9 @@ typedef struct {
     Suit suit;
 } Card;
 
-char* suit_to_string(Suit suit);
+const char* suit_to_string(Suit suit);
 char* card_to_string(Card card);
+
 Card* create_deck(void);
+void shuffle_deck(Card* deck);
+void display_deck(Card* deck);
