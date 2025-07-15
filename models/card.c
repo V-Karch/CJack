@@ -1,7 +1,4 @@
 #include "card.h"
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 const char* suit_to_string(Suit suit) {
     switch (suit) {

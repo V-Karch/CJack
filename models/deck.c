@@ -1,6 +1,4 @@
-#include "card.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "deck.h"
 
 Card* create_deck(void) {
     Card* deck = malloc(52 * sizeof(Card));

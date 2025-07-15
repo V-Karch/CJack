@@ -1,7 +1,10 @@
 #pragma once
 
-#include <stdbool.h>
+#include <time.h>
+#include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 #ifndef COLOR_RESET 
     #define COLOR_RESET "\033[0m"
