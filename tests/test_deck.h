@@ -77,3 +77,39 @@ static MunitResult test_set_all_cards_undrawn() {
     free(deck);
     return MUNIT_OK;
 }
+
+static MunitResult test_find_next_undrawn_card_invalid() {
+    Card* deck = create_deck();
+
+    int expected_value = -1;
+
+    for (size_t i = 0; i < 52; i++) {
+        set_card_drawn(deck, i);
+        // Setting everything to drawn
+    }
+
+    int actual_value = find_next_undrawn_card(deck);
+
+    assert_int(expected_value, ==, actual_value);
+
+    free(deck);
+    return MUNIT_OK;
+}
+
+static MunitResult test_find_next_undrawn_card_4() {
+    Card* deck = create_deck();
+
+    int expected_value = 4;
+
+    for (size_t i = 0; i < 4; i++) {
+        set_card_drawn(deck, i);
+        // Setting indices 0-3 to drawn
+    }
+
+    int actual_value = find_next_undrawn_card(deck);
+
+    assert_int(expected_value, ==, actual_value);
+
+    free(deck);
+    return MUNIT_OK;
+}
