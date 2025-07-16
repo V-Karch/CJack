@@ -1,6 +1,8 @@
 #define MUNIT_ENABLE_ASSERT_ALIASES
 #include "../munit/munit.h"
 
+#include "test_card.h"
+
 #ifndef MAKE_TEST
     #define MAKE_TEST(name, func) { name, func, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 #endif
@@ -19,6 +21,7 @@ MunitResult test_sample() {
 // Test array
 MunitTest test_all_tests[] = {
     MAKE_TEST("/test_sample", test_sample),
+    MAKE_TEST("/card/create_undrawn_ace_hearts", test_create_undrawn_ace_hearts),
     TEST_TERMINATOR
 };
 
