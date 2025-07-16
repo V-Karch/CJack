@@ -1,0 +1,29 @@
+#pragma once
+
+#define MUNIT_ENABLE_ASSERT_ALIASES
+#include "../munit/munit.h"
+
+#include "../models/hand.h"
+
+static MunitResult test_draw_player_hand() {
+    Card* deck = create_deck();
+    Hand* player_hand = draw_player_hand(deck);
+
+    Card expected_first_card = {1, true, HEARTS};
+    Card expected_second_card = {2, true, HEARTS};
+    size_t expected_length = 2;
+
+    assert_int(expected_length, ==, player_hand->length);
+
+    assert_int(expected_first_card.value, ==, player_hand->hand[0].value);
+    assert_int(expected_first_card.drawn, == , player_hand->hand[0].drawn);
+    assert_int(expected_first_card.suit, ==, player_hand->hand[0].suit);
+
+    assert_int(expected_second_card.value, ==, player_hand->hand[1].value);
+    assert_int(expected_second_card.drawn, == , player_hand->hand[1].drawn);
+    assert_int(expected_second_card.suit, ==, player_hand->hand[1].suit);
+
+    free_hand(player_hand);
+    free(deck);
+    return MUNIT_OK;
+}

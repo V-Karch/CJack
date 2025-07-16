@@ -3,6 +3,7 @@
 
 #include "test_card.h"
 #include "test_deck.h"
+#include "test_hand.h"
 
 #ifndef MAKE_TEST
     #define MAKE_TEST(name, func) { name, func, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
@@ -39,6 +40,8 @@ MunitTest test_all_tests[] = {
     MAKE_TEST("/deck/set_all_cards_undrawn", test_set_all_cards_undrawn),
     MAKE_TEST("/deck/find_next_undrawn_card_invalid", test_find_next_undrawn_card_invalid),
     MAKE_TEST("/deck/find_next_undrawn_card_4", test_find_next_undrawn_card_4),
+    // Hand Tests
+    MAKE_TEST("/hand/draw_player_hand", test_draw_player_hand),
     // Termination character
     TEST_TERMINATOR
 };
