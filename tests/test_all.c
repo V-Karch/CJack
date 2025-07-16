@@ -42,6 +42,7 @@ MunitTest test_all_tests[] = {
     MAKE_TEST("/deck/find_next_undrawn_card_4", test_find_next_undrawn_card_4),
     // Hand Tests
     MAKE_TEST("/hand/draw_player_hand", test_draw_player_hand),
+    MAKE_TEST("/hand/draw_dealer_hand", test_draw_dealer_hand),
     // Termination character
     TEST_TERMINATOR
 };

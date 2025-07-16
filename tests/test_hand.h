@@ -27,3 +27,26 @@ static MunitResult test_draw_player_hand() {
     free(deck);
     return MUNIT_OK;
 }
+
+static MunitResult test_draw_dealer_hand() {
+    Card* deck = create_deck();
+    Hand* dealer_hand = draw_dealer_hand(deck);
+
+    Card expected_first_card = {3, true, HEARTS};
+    Card expected_second_card = {4, true, HEARTS};
+    size_t expected_length = 2;
+
+    assert_int(expected_length, ==, dealer_hand->length);
+
+    assert_int(expected_first_card.value, ==, dealer_hand->hand[0].value);
+    assert_int(expected_first_card.drawn, == , dealer_hand->hand[0].drawn);
+    assert_int(expected_first_card.suit, ==, dealer_hand->hand[0].suit);
+
+    assert_int(expected_second_card.value, ==, dealer_hand->hand[1].value);
+    assert_int(expected_second_card.drawn, == , dealer_hand->hand[1].drawn);
+    assert_int(expected_second_card.suit, ==, dealer_hand->hand[1].suit);
+
+    free_hand(dealer_hand);
+    free(deck);
+    return MUNIT_OK;
+}
