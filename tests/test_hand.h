@@ -50,3 +50,18 @@ static MunitResult test_draw_dealer_hand() {
     free(deck);
     return MUNIT_OK;
 }
+
+static MunitResult test_calculate_hand_value_3_ace() {
+    Card cards[] = {
+        {1, true, HEARTS},
+        {1, true, CLUBS},
+        {1, true, DIAMONDS}
+    };
+
+    Hand hand[] = {3, cards};
+
+    size_t expected_value = 13;
+    assert_int(expected_value, ==, calculate_hand_value(hand));
+
+    return MUNIT_OK;
+}
