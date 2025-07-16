@@ -62,3 +62,39 @@ MunitResult test_suit_to_color_clubs() {
 
     return MUNIT_OK;
 }
+
+MunitResult test_card_to_string_undrawn_ace_diamonds() {
+    Card card = {1, false, DIAMONDS};
+
+    const char* expected_string = "\033[38;2;255;177;116mCard{ace, not drawn, diamonds}\033[0m";
+    char* actual_string = card_to_string(card);
+
+    assert_string_equal(expected_string, actual_string);
+    free(actual_string);
+
+    return MUNIT_OK;
+}
+
+MunitResult test_card_to_string_drawn_queen_spades() {
+    Card card = {12, true, SPADES};
+
+    const char* expected_string = "\033[38;2;116;117;255mCard{queen, drawn, spades}\033[0m";
+    char* actual_string = card_to_string(card);
+
+    assert_string_equal(expected_string, actual_string);
+    free(actual_string);
+
+    return MUNIT_OK;
+}
+
+MunitResult test_card_to_string_drawn_invalid_clubs() {
+    Card card = {30, true, CLUBS};
+
+    const char* expected_string = "\033[38;2;116;211;255mCard{unknown, drawn, clubs}\033[0m";
+    char* actual_string = card_to_string(card);
+
+    assert_string_equal(expected_string, actual_string);
+    free(actual_string);
+
+    return MUNIT_OK;
+}
