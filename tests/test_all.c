@@ -35,6 +35,8 @@ MunitTest test_all_tests[] = {
     // Deck Tests
     MAKE_TEST("/deck/create_deck", test_create_deck),
     MAKE_TEST("/deck/set_card_drawn_0", test_set_card_drawn_0),
+    MAKE_TEST("/deck/set_all_cards_drawn", test_set_all_cards_drawn),
+    MAKE_TEST("/deck/set_all_cards_undrawn", test_set_all_cards_undrawn),
     // Termination character
     TEST_TERMINATOR
 };

@@ -43,3 +43,37 @@ static MunitResult test_set_card_drawn_0() {
     free(deck);
     return MUNIT_OK;
 }
+
+static MunitResult test_set_all_cards_drawn() {
+    Card* deck = create_deck();
+
+    bool expected_drawn = true;
+
+    for (size_t i = 0; i < 52; i++) {
+        set_card_drawn(deck, i);
+        assert_int(expected_drawn, ==, deck[i].drawn);
+    }
+
+    free(deck);
+    return MUNIT_OK;
+}
+
+static MunitResult test_set_all_cards_undrawn() {
+    Card* deck = create_deck();
+
+    bool expected_drawn = false;
+
+    for (size_t i = 0; i < 52; i++) {
+        set_card_drawn(deck, i);
+        // Setting everything to drawn
+    }
+
+    set_all_cards_undrawn(deck);
+    // Setting everything back to undrawn
+    for (size_t i = 0; i < 52; i++) {
+        assert_int(expected_drawn, ==, deck[i].drawn);
+    }
+
+    free(deck);
+    return MUNIT_OK;
+}
