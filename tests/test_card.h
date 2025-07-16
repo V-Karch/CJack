@@ -19,3 +19,46 @@ MunitResult test_create_undrawn_ace_hearts() {
     return MUNIT_OK;
 }
 
+MunitResult test_suit_to_color_hearts() {
+    Suit suit = HEARTS;
+
+    const char* expected_string = "\033[38;2;255;116;116m";
+    const char* actual_string = suit_to_color(suit);
+
+    assert_string_equal(expected_string, actual_string);
+
+    return MUNIT_OK;
+}
+
+MunitResult test_suit_to_color_diamonds() {
+    Suit suit = DIAMONDS;
+
+    const char* expected_string = "\033[38;2;255;177;116m";
+    const char* actual_string = suit_to_color(suit);
+
+    assert_string_equal(expected_string, actual_string);
+
+    return MUNIT_OK;
+}
+
+MunitResult test_suit_to_color_spades() {
+    Suit suit = SPADES;
+
+    const char* expected_string = "\033[38;2;116;117;255m";
+    const char* actual_string = suit_to_color(suit);
+
+    assert_string_equal(expected_string, actual_string);
+
+    return MUNIT_OK;
+}
+
+MunitResult test_suit_to_color_clubs() {
+    Suit suit = CLUBS;
+
+    const char* expected_string = "\033[38;2;116;211;255m";
+    const char* actual_string = suit_to_color(suit);
+
+    assert_string_equal(expected_string, actual_string);
+
+    return MUNIT_OK;
+}

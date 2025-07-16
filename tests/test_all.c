@@ -22,6 +22,11 @@ MunitResult test_sample() {
 MunitTest test_all_tests[] = {
     MAKE_TEST("/test_sample", test_sample),
     MAKE_TEST("/card/create_undrawn_ace_hearts", test_create_undrawn_ace_hearts),
+    MAKE_TEST("/card/suit_to_color_hearts", test_suit_to_color_hearts),
+    MAKE_TEST("/card/suit_to_color_diamonds", test_suit_to_color_diamonds),
+    MAKE_TEST("/card/suit_to_color_spades", test_suit_to_color_spades),
+    MAKE_TEST("/card/suit_to_color_clubs", test_suit_to_color_clubs),
+    
     TEST_TERMINATOR
 };
 
