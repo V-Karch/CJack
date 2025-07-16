@@ -2,6 +2,7 @@
 #include "../munit/munit.h"
 
 #include "test_card.h"
+#include "test_deck.h"
 
 #ifndef MAKE_TEST
     #define MAKE_TEST(name, func) { name, func, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
@@ -32,7 +33,7 @@ MunitTest test_all_tests[] = {
     MAKE_TEST("/card/card_to_string_drawn_queen_spades", test_card_to_string_drawn_queen_spades),
     MAKE_TEST("/card/card_to_string_drawn_invalid_clubs", test_card_to_string_drawn_invalid_clubs),
     // Deck Tests
-    
+    MAKE_TEST("/deck/create_deck", test_create_deck),
     TEST_TERMINATOR
 };
 

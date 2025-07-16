@@ -4,7 +4,7 @@ Card* create_deck(void) {
     Card* deck = malloc(52 * sizeof(Card));
     Suit suits[4] = {HEARTS, DIAMONDS, SPADES, CLUBS};
     
-    unsigned int deck_index = 0;
+    size_t deck_index = 0;
 
     for (size_t i = 0; i < 4; i++) { // Suit
         for (size_t j = 1; j < 14; j++) { // Value

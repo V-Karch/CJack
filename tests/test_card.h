@@ -8,7 +8,7 @@
 static MunitResult test_create_undrawn_ace_hearts() {
     Card card = {1, false, HEARTS};
 
-    int expected_value = 1;
+    size_t expected_value = 1;
     bool expected_drawn = false;
     Suit expected_suit = HEARTS;
 
