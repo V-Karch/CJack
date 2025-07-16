@@ -20,5 +20,5 @@ $ make test
 ## 3. Run the game
 ```bash
 $ make
-$./cjack
+$ ./cjack
 ```
