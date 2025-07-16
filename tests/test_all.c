@@ -20,7 +20,9 @@ MunitResult test_sample() {
 
 // Test array
 MunitTest test_all_tests[] = {
+    // Sample Test
     MAKE_TEST("/test_sample", test_sample),
+    // Card Tests
     MAKE_TEST("/card/create_undrawn_ace_hearts", test_create_undrawn_ace_hearts),
     MAKE_TEST("/card/suit_to_color_hearts", test_suit_to_color_hearts),
     MAKE_TEST("/card/suit_to_color_diamonds", test_suit_to_color_diamonds),
@@ -29,6 +31,8 @@ MunitTest test_all_tests[] = {
     MAKE_TEST("/card/card_to_string_undrawn_ace_diamonds", test_card_to_string_undrawn_ace_diamonds),
     MAKE_TEST("/card/card_to_string_drawn_queen_spades", test_card_to_string_drawn_queen_spades),
     MAKE_TEST("/card/card_to_string_drawn_invalid_clubs", test_card_to_string_drawn_invalid_clubs),
+    // Deck Tests
+    
     TEST_TERMINATOR
 };
 

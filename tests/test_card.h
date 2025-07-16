@@ -5,7 +5,7 @@
 
 #include "../models/card.h"
 
-MunitResult test_create_undrawn_ace_hearts() {
+static MunitResult test_create_undrawn_ace_hearts() {
     Card card = {1, false, HEARTS};
 
     int expected_value = 1;
@@ -19,7 +19,7 @@ MunitResult test_create_undrawn_ace_hearts() {
     return MUNIT_OK;
 }
 
-MunitResult test_suit_to_color_hearts() {
+static MunitResult test_suit_to_color_hearts() {
     Suit suit = HEARTS;
 
     const char* expected_string = "\033[38;2;255;116;116m";
@@ -30,7 +30,7 @@ MunitResult test_suit_to_color_hearts() {
     return MUNIT_OK;
 }
 
-MunitResult test_suit_to_color_diamonds() {
+static MunitResult test_suit_to_color_diamonds() {
     Suit suit = DIAMONDS;
 
     const char* expected_string = "\033[38;2;255;177;116m";
@@ -41,7 +41,7 @@ MunitResult test_suit_to_color_diamonds() {
     return MUNIT_OK;
 }
 
-MunitResult test_suit_to_color_spades() {
+static MunitResult test_suit_to_color_spades() {
     Suit suit = SPADES;
 
     const char* expected_string = "\033[38;2;116;117;255m";
@@ -52,7 +52,7 @@ MunitResult test_suit_to_color_spades() {
     return MUNIT_OK;
 }
 
-MunitResult test_suit_to_color_clubs() {
+static MunitResult test_suit_to_color_clubs() {
     Suit suit = CLUBS;
 
     const char* expected_string = "\033[38;2;116;211;255m";
@@ -63,7 +63,7 @@ MunitResult test_suit_to_color_clubs() {
     return MUNIT_OK;
 }
 
-MunitResult test_card_to_string_undrawn_ace_diamonds() {
+static MunitResult test_card_to_string_undrawn_ace_diamonds() {
     Card card = {1, false, DIAMONDS};
 
     const char* expected_string = "\033[38;2;255;177;116mCard{ace, not drawn, diamonds}\033[0m";
@@ -75,7 +75,7 @@ MunitResult test_card_to_string_undrawn_ace_diamonds() {
     return MUNIT_OK;
 }
 
-MunitResult test_card_to_string_drawn_queen_spades() {
+static MunitResult test_card_to_string_drawn_queen_spades() {
     Card card = {12, true, SPADES};
 
     const char* expected_string = "\033[38;2;116;117;255mCard{queen, drawn, spades}\033[0m";
@@ -87,7 +87,7 @@ MunitResult test_card_to_string_drawn_queen_spades() {
     return MUNIT_OK;
 }
 
-MunitResult test_card_to_string_drawn_invalid_clubs() {
+static MunitResult test_card_to_string_drawn_invalid_clubs() {
     Card card = {30, true, CLUBS};
 
     const char* expected_string = "\033[38;2;116;211;255mCard{unknown, drawn, clubs}\033[0m";
