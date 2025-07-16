@@ -5,7 +5,7 @@
 
 #include "../models/deck.h"
 
-MunitResult test_create_deck() {
+static MunitResult test_create_deck() {
     Card* deck = create_deck();
 
     Suit suits[4] = {HEARTS, DIAMONDS, SPADES, CLUBS};
@@ -22,6 +22,23 @@ MunitResult test_create_deck() {
             deck_index++;
         }
     }
+
+    free(deck);
+    return MUNIT_OK;
+}
+
+static MunitResult test_set_card_drawn_0() {
+    Card* deck = create_deck();
+
+    size_t expected_value = 1;
+    bool expected_drawn = true;
+    Suit expected_suit = HEARTS;
+
+    set_card_drawn(deck, 0);
+
+    assert_int(expected_value, ==, deck[0].value);
+    assert_int(expected_drawn, ==, deck[0].drawn);
+    assert_int(expected_suit, ==, deck[0].suit);
 
     free(deck);
     return MUNIT_OK;
