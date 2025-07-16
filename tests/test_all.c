@@ -44,6 +44,9 @@ MunitTest test_all_tests[] = {
     MAKE_TEST("/hand/draw_player_hand", test_draw_player_hand),
     MAKE_TEST("/hand/draw_dealer_hand", test_draw_dealer_hand),
     MAKE_TEST("/hand/calculate_hand_value_ace_3", test_calculate_hand_value_3_ace),
+    MAKE_TEST("/hand/calculate_hand_value_ace_king", test_calculate_hand_value_ace_king),
+    MAKE_TEST("/hand/calculate_hand_value_king_king", test_calculate_hand_value_king_king),
+    MAKE_TEST("/hand/calculate_hand_value_8_7", test_calculate_hand_value_8_7),
     // Termination character
     TEST_TERMINATOR
 };

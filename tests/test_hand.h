@@ -65,3 +65,45 @@ static MunitResult test_calculate_hand_value_3_ace() {
 
     return MUNIT_OK;
 }
+
+static MunitResult test_calculate_hand_value_ace_king() {
+    Card cards[] = {
+        {1, true, HEARTS},
+        {13, true, HEARTS}
+    };
+
+    Hand hand[] = {2, cards};
+
+    size_t expected_value = 21;
+    assert_int(expected_value, ==, calculate_hand_value(hand));
+
+    return MUNIT_OK;
+}
+
+static MunitResult test_calculate_hand_value_king_king() {
+    Card cards[] = {
+        {13, true, HEARTS},
+        {13, true, HEARTS}
+    };
+
+    Hand hand[] = {2, cards};
+
+    size_t expected_value = 20;
+    assert_int(expected_value, ==, calculate_hand_value(hand));
+
+    return MUNIT_OK;
+}
+
+static MunitResult test_calculate_hand_value_8_7() {
+    Card cards[] = {
+        {8, true, HEARTS},
+        {7, true, HEARTS}
+    };
+
+    Hand hand[] = {2, cards};
+
+    size_t expected_value = 15;
+    assert_int(expected_value, ==, calculate_hand_value(hand));
+
+    return MUNIT_OK;
+}
