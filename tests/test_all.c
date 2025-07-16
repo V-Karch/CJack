@@ -5,6 +5,10 @@
     #define MAKE_TEST(name, func) { name, func, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 #endif
 
+#ifndef TEST_TERMINATOR
+    #define TEST_TERMINATOR { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
+#endif
+
 // Simple test that asserts 1 == 1
 // Just to make sure that munit testing works at all
 MunitResult test_sample() {
@@ -15,7 +19,7 @@ MunitResult test_sample() {
 // Test array
 MunitTest test_all_tests[] = {
     MAKE_TEST("/test_sample", test_sample),
-    { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
+    TEST_TERMINATOR
 };
 
 // Test All Tests
