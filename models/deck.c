@@ -55,6 +55,10 @@ int find_next_undrawn_card(Card* deck) {
 }
 
 void set_card_drawn(Card* deck, size_t index) {
+    if (index > 51) { // Do nothing if index is out of range
+        return;
+    }
+
     deck[index].drawn = true; // Marks a card as drawn
 }
 
