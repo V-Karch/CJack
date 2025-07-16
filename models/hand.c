@@ -44,6 +44,17 @@ void display_hand(Hand* hand) {
     }
 }
 
+void display_first_dealer_card(Hand *hand) {
+    char* dealer_card_string = card_to_string(hand->hand[0]);
+    printf("\nThe dealer's first card:\n");
+    printf("%s\n", dealer_card_string);
+
+    Hand fake_hand = {1, &hand->hand[0]};
+    printf("Value: %d\n", calculate_hand_value(&fake_hand));
+
+    free(dealer_card_string);
+}
+
 void free_hand(Hand* hand) {
     free(hand->hand);
     free(hand);
