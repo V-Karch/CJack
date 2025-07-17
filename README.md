@@ -12,7 +12,7 @@ $ gcc --version
 $ git clone --recursive https://github.com/V-Karch/CJack.git  
 ```  
   
-## 2. Run the tests
+## 2. Run the tests (if you want to)
 ```bash
 $ make test
 ```  
@@ -21,4 +21,6 @@ $ make test
 ```bash
 $ make
 $ ./cjack
-```
+```  
+  
+Note: This is a temporary set of instructions and will be changed once releases are available
