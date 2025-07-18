@@ -18,7 +18,7 @@ void run_game() {
     char player_choice;
     bool player_busted = false;
 
-    while (calculate_hand_value(player_hand) < 21) {
+    while (!player_busted) {
         printf("\nWill you hit or stand? (h/s) $ ");
         scanf(" %c", &player_choice);
 
